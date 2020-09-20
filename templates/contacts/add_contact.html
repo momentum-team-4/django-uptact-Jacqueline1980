@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Add Contact</h1>
+<h1>All Contacts</h1>
+
+<p><a href="{% url 'add_contact' %}">Add New Contact</a></p>
 
 <div>
   <form action="{% url 'add_contact' %}" method="POST">

@@ -17,7 +17,10 @@
         {% if contact.address_2 %}
           {{ contact.address_2 }}<br />
         {% endif %}
-        {{ contact.city }}, {{ contact.state }} {{ contact.zip_code }}
+        {{ contact.city }}, {{ contact.state }} {{ contact.zip_code }}<br />
+        {% if contact.birthday %}
+          {{ contact.birthday }}<br />
+        {% endif %}
       </div>
     </div>
 
