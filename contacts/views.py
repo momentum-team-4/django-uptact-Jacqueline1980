@@ -51,11 +51,14 @@ def delete_contact(request, pk):
 
 
 def add_note(request, pk):
+    contact = get_object_or_404(Contact, pk=pk)
+
     if request.method == 'GET':
         form = NoteForm()
+
     else:
         form = NoteForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            form.save(commit=False)
 
-    return render(request, "notes/add_note.html", {"form": form})
+    return render(request, "note/add_note.html", {"form": form})

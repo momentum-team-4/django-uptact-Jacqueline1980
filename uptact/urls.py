@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from contacts import views as contacts_views
+from notes import views as note_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,9 +30,12 @@ urlpatterns = [
     path('contacts/<int:pk>/delete/',
          contacts_views.delete_contact,
          name='delete_contact'),
-    path('contacts/<int:pk>/notes', 
+    path('contacts/<int:pk>/note/add_note/', 
          contacts_views.add_note, 
          name='add_note'),
+         path('contacts/<int:pk>/note/edit_note/', 
+         contacts_views.add_note, 
+         name='edit_note'),
     ]
 
 if settings.DEBUG:
