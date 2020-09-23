@@ -21,11 +21,11 @@ class Contact(models.Model):
     state = USStateField(null=True, blank=True)
     zip_code = USZipCodeField(null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    note = models.ForeignKey(Note, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.name
-    
+
+
 class Note(models.Model):
     text = models.TextField(max_length=255, blank=True)
     date = models.DateTimeField(auto_now_add=True)
